@@ -1,0 +1,83 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+%\usepackage[margin=1in]{geometry}
+\usepackage[landscape,margin=1in]{geometry}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+\usepackage{pifont}
+
+\definecolor{amsterdamred}{RGB}{227,0,27}
+
+
+\AddToShipoutPictureBG{%
+\begin{tikzpicture}[remember picture,overlay]
+    \fill[amsterdamred,opacity=0.72]
+        (current page.south west)
+        rectangle
+        ([xshift=2cm]current page.north west);
+\end{tikzpicture}
+\begin{tikzpicture}[remember picture,overlay]
+% White strip
+\fill[white]
+    ([xshift=-2cm,yshift=-1cm]current page.north east)
+    rectangle
+    ([xshift=-1cm,yshift=-7cm]current page.north east);
+
+% Crosses
+\begin{scope}[shift={([xshift=-1.5cm,yshift=-1.2cm]current page.north east)}]
+    \foreach \y in {0, -1.5, -3.0} {
+        \begin{scope}[shift={(0,\y)}]
+            \draw[draw=amsterdamred, line width=7pt, line cap=round] (-0.3, -0.3) -- (0.3, 0.3);
+            \draw[draw=amsterdamred, line width=7pt, line cap=round] (-0.3, 0.3) -- (0.3, -0.3);
+        \end{scope}
+    }
+\end{scope}
+\end{tikzpicture}
+}
+
+\pagestyle{empty}
+\begin{document}
+
+\begin{center}
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.3\textwidth]{ICSA26_Logo.jpg}
+\end{figure}
+
+
+{\Large This is to certify that}
+
+\vspace{1.5cm}
+
+{\LARGE\bfseries FULL-NAME}
+
+\vspace{1.5cm}
+
+has successfully attended the
+
+\vspace{0.5cm}
+
+{\Large 23rd IEEE International Conference on Software Architecture}
+
+\vspace{0.5cm}
+
+held in Amsterdam, Netherlands -- June 22--26, 2026.
+
+\vspace{2cm}
+
+\begin{tabular}{p{0.35\textwidth} p{0.25\textwidth} p{0.35\textwidth}}
+\centering Ivano Malavolta & & \centering Vasilios Andrikopoulos \tabularnewline
+\centering General Co-Chair & & \centering General Co-Chair
+\end{tabular}
+
+\end{center}
+
+\end{document}
